@@ -518,6 +518,8 @@ class Element:
                 s = f"basix.ElementFamily.{s}"
                 if "lagrange_variant" in params:
                     s += f", ..., basix.LagrangeVariant.{params['lagrange_variant']}"
+            elif lib == "ferrite":
+                pass # s = s
             else:
                 s = f"\"{s}\""
                 if "variant" in params:

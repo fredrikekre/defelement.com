@@ -14,3 +14,7 @@ bempp:
   name: Bempp
   url: https://github.com/bempp/bempp-cl
   install: pip3 install bempp-cl
+ferrite:
+  name: Ferrite.jl
+  url: https://github.com/Ferrite-FEM/Ferrite.jl
+  install: julia> using Pkg; Pkg.add("Ferrite")

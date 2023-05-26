@@ -122,3 +122,18 @@ def bempp_example(element):
             out += "element = bempp.api.function_space(grid, "
             out += f"\"{bempp_name}\", {ord})"
     return out
+
+def ferrite_example(element):
+    out = "using Ferrite"
+    for e in element.examples:
+        ref, ord, kwargs = parse_example(e)
+        assert len(kwargs) == 0
+        ord = int(ord)
+
+        ferrite_name, params = element.get_implementation_string("ferrite", ref)
+
+        if ferrite_name is not None:
+            out += "\n\n"
+            out += f"# Create {element.name} order {ord} on a {ref}\n"
+            out += f"{ferrite_name}{{Ref{ref.capitalize()}, {ord}}}()"
+    return out

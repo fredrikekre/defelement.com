@@ -112,6 +112,13 @@ ufl:
   hexahedron: Q
 bempp:
   triangle: P orders=1
+ferrite:
+  interval: Lagrange
+  triangle: Lagrange
+  tetrahedron: Lagrange
+  quadrilateral: Lagrange
+  hexahedron: Lagrange
+  prism: Lagrange
 examples:
   - interval,1
   - interval,2
