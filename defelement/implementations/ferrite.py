@@ -207,6 +207,16 @@ class FerriteImplementation(Implementation):
                     "although they span the same space."
                 )
             ]
+        if element.filename == "discontinuous-lagrange":
+            return [
+                (
+                    "Ferrite.jl maps this element to physical cells with the identity mapping "
+                    "rather than the L2 Piola mapping used in DefElement's definition. On "
+                    "affinely mapped cells the two mappings span the same space, but on "
+                    "non-affinely mapped cells (for example bilinear quadrilaterals) they "
+                    "differ."
+                )
+            ]
         return []
 
     id = "ferrite"
